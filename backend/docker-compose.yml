@@ -23,10 +23,12 @@ services:
     depends_on:
       - mongo
 
-  # node:
-  #   build: .
-  #   restart: always
-  #   ports:
-  #     - 3001:3001
-  #   depends_on:
-  #     - mongo
+  node:
+    build: .
+    restart: always
+    ports:
+      - 3001:3001
+    depends_on:
+      - mongo
+    volumes:
+      - ./:/app
